@@ -1,0 +1,5 @@
+BRUNO VOLPINI 44672039
+SAMSA AHUERMA 45365613
+
+
+Videojuego Space invaders, el codigo usa funciones de cuadrados, triangulos y lineas para dibujar sprites y posicionarlos, fondo con letras y degradado espacial, la animacion esta hecha frame by frame, cada uno compuesto con todos los sprites necesarios.

@@ -1,0 +1,2 @@
+ej4) las variables que tengo que resetar son como internas y por eso antes de usarlas tengo que resetear?
+rm * .o #elimina todos los archivos.o // o usar alias de bash 

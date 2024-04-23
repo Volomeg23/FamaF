@@ -1,0 +1,30 @@
+CuadArgs:
+    movz x10, 0xFF, lsl 16 // color rojo    
+    mov x0, x20  // posicion base    
+    mov x1, xzr // indice de cuad          
+    mov x3, 100 // eje x
+    mov x4, 100 // eje y
+    mov x5, SCREEN_WIDTH //640
+    mov x6, 60 //  largo cuad
+
+CuadPos:
+    madd x1, x4, x5, x3
+    lsl x1, x1, 2
+    add x0, x20, x1
+
+PaintCuad:
+    stur w10,[x0]    //aplica  color 
+    add x0,x0,4     // siguiente pixel
+    sub x6,x6,1  // decrementa el contador de ancho
+    cbnz x6, PaintCuad // asegura que el largo se completo
+    cmp x4, 200        // altura cuadrado  PRE: x4< literal
+    b.eq exit
+    
+CuadReset:
+    add x4, x4, 1
+    madd x1, x4, x5, x3
+    lsl x1, x1, 2
+    add x0, x20, x1
+    mov x6, 60
+    b PaintCuad
+

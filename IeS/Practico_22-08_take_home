@@ -1,0 +1,20 @@
+implementar el juego de cartas "la cosa" en version web
+
+- consiste en especificar la funcionalidad del juego
+
+-individual y se entrega el 4/9/2003 a las 23:55 en form (SE ENTREGA UNA SOLA VEZ), se evalua de manera individual entre el 5 y el 7
+
+-FORMATO DE ENTREGA: pdf
+
+-Se pide: 
+          -alcance del proyecto: objetivos, que cosas entran y no entran en el proyecto (osea que cosas va a hacer el programa y que cosas no puede hacer el programa, osea limitaciones), requerimientos funcionales y no funcionales. desde lo general a lo mas particular
+
+          -DFD: diagrama de flujo de datos, teniendo como maxima granularidad hasta los tipos de carta: accion(en turno), defensa(fuera de turno), panico(apenas las tomo se deben jugar), obstaculo. todo el sistema completo, debe contener casos de uso
+
+          -diagrama de clases del proyecto (OO)
+          - 3 casos de usos: 1)crear partida 2)turno completo(cosas que pueden hacer el usuario en un turno,subcasos) 3)jugar una carta de sospecha (actores(usuario), precondiciones, escenarios)
+            NO hablar de interfaz, solo de acciones que ocurren y respuesta a acciones. DEBE SER DEL PUNTO DE VISTA DEL USUARIO
+
+
+EXPLICACION JUEGO: 
+         jugadores en ronda y por turnos, se reparten cartas, 4 para cada una (SIEMPRE, osea sacar cartas implica reemplazarla), hay una carta especial de las que se entregan que dice quien es la cosa. El objetivo de los humanos es matar a la cosa, hay cartas para matar humanos o la cosa(accion) y otra paras que no te maten(defensa). La cosa debe infectar a los humanos o  que se maten entre ellos, en un turno pasan 3 etapas: tomar una carta(mazo), jugar una carta o descartarla e intercambiar una carta con el jugador que sigue en turno de la ronda(con esta accion se puede infectar). la carta de infectado: si la levantas y no te infectaron, la descartas si sos infectado, solo se la podes pasar a la cosa.

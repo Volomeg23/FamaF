@@ -1,0 +1,81 @@
+Cada usuario tiene ciertos derechos sobre ciertos objetos. 
+
+Distintos usuarios pueden tener los mismos o distintos derechos sobre los mismos objetos.
+
+Para controlar la granularidad de los derechos de acceso, los usuarios pueden tener derechos (autorización / privilegios) sobre
+-Tabla 
+-Vista  
+
+En SQL standard se incluyen los privilegios SELECT, INSERT, UPDATE, y DELETE. (privilage list)
+En el lenguaje de definición de SQL se incluyen los comandos GRANT y REVOKE para administrar privilegios. 
+
+
+El comando GRANT es usado para conceder autorización. La forma básica de esta sentencia es la siguiente: 
+
+    grant <privilege list>
+    on <relation name or view name>
+    to <user/role list>; 
+
+
+EJEMPLOS
+
+    grant select
+    on department
+    to Mafalda, Guille; 
+
+
+    grant select
+    on department
+    to Mafalda, Guille; 
+
+Para anular una autorización, se use la sentencia REVOKE. La estructura es muy similar a GRANT: 
+
+
+    revoke <privilege list>
+    on <relation name or view name> 
+    from <user/role list>; 
+
+EJEMPLOS:
+
+    revoke select 
+    on department 
+    from Mafalda, Guille; 
+
+    revoke update (budget) 
+    on department 
+    from Mafalda, Guille; 
+
+Problema:
+
+Si hay muchos usuarios con muchos privilegios diferentes, resultará difícil adicionar nuevos privilegios a cada individuo.
+
+Surge la idea de Roles:
+
+Grupos de privilegios relacionados que se otorgan a usuarios. 
+Si se cambian los privilegios encapsulados en un rol, los privilegios de todos los usuarios que tienen ese rol también cambian.
+
+EJEMPLO DE CREACION:
+    create role instructor;
+
+Ejemplo de asignación de privilegios a roles:
+
+    grant select on takes 
+    to instructor;
+
+Ejemplo de asignación de privilegios de roles a roles y a usuarios:
+
+    create role dean;
+    grant instructor to dean; 
+    grant dean to Mafalda; --> herencia de privilegios
+
+CONSEJOS:
+
+- El usuario root debe estar protegido con una contraseña
+- Únicamente el usuario root debe tener acceso a la tabla mysql.user
+- No dar más privilegios que los necesarios
+- No dar permisos a todos los hosts (comodín ‘%’)
+- No almacenar contraseñas (como datos) en texto plano  ->guardar el "salted hash" de la contraseña
+
+
+
+

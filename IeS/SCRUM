@@ -1,0 +1,92 @@
+-------------Metodologias agiles y SCRUM-----------------
+
+    -metodos de ingenieria basados en el desaroolo incremental e iterativo
+        -construir de a pedazos y avanzar sobre lo que funciona, como de a capas
+       
+CARACTERISTICAS:
+    -los requerimientos evolucionan con el tiempo, a causa de necesidades
+    - los equipos de trabajo deben ser auto organizados, y multifuncionales
+     - Decisiones a corto plazo
+
+el trabajo esta dividido en iteraciones CORTAS, en las cuales hay planeamiento, analisis de req. , diseño, implementacion, y testing
+
+el objetivo de cada iteracion no es completar el proyecto entero, o hacer release, solo mejorar lo que ya estaba en la iteracion anterior
+
+Metodo Waterfall (cascada):
+
+las iteraciones no son tan cortas y cada una de ellas abarca una parte grande del proyecto
+    
+
+---------SCRUM 101--------------
+
+Framework mediante el cual equipos de personas pueden trabajar en problemas complejos, mientras que de manera productiva y creativa, entregan productos con el mayor valor posible.
+
+    - hay ROLES, EVENTOS y ARTEFACTOS que definen practicas para organizar el trabajo
+
+*product backlog: lista de tareas tecnicas, de diseño o arquitectonicas que hacen falta para que el producto este completo
+
+*sprint backlog: lista de tareas de una iteracion sola
+
+*incremento: diferencia entre el valor agregado al final del sprint comparado con el principio del sprint
+
+*****************************
+Transparencia: aspectos significativos del proceso deben ser visibles para cada actor responsable del resultado.
+
+Inspeccion: los usuarios del SCRUM deben inspeccionar frecuentemente tanto artefactos generados como el avance para detectar variaciones indeseadas
+
+Adaptacion:
+
+
+*************************************++
+
+Roles:
+
+Product owner: responsable del producto y el lazo entre equipo y cliente.
+    -conoce y entiende el negocio y las necesidades de cliente/ usuario
+    - define requerimientos, prioridades y expectativas. definir "que" y "cuando"
+    - mantiene el product backlog y lo mantiene transparente
+
+Development team: responsable del incremento que representa el valor agregado
+
+SCRUM owner: responsable de la implementacion de Scrum en la organizacion
+        -ayuda a entender la teoria , reglas y valores del SCRUM
+        -ayuda a guiar iteraciones y sus prioridades
+
+---------------------EVENTOS---------------------------------------
+
+*Sprint Planning -> antes del sprint
+*Daily SCRUM ->durante el sprint
+*Review -> al final del sprint
+*Retrospective 
+
+Sprint Planning -> selecciona elementos del product backlog para poder ser analizados y descompuestos en sprint backlogs a partir de la eficiencia del equipo y a partir de las PRIORIDADES
+
+Daily SCRUM -> reunion diaria, corta ( de 15') y especifica. misma hora y mismo lugar
+            - tareas, objetivos y bloqueos (que hice ayer, que hago hoy y como completar mis objetivos
+            - no se discuten problemas tecnicos
+            
+Review -> revision de incremento, sprint completado? , genera feedback, se discuten problemas durante el sprint y que se hizo de manera adecuada
+
+Retrospectiva -> para el DEV team, que se hizo bien, que se hizo mal y como mejorar, conclusiones ( Action Items), el concepto es de mejora continua ( mejor si es anonimo)
+
+----------------------------------RESPONSABILIDAD y ACCOUNTABILITY----------------------------------
+
+ver filmina para ejemplo
+
+
+----------------------------ESTIMACIONES Y METRICAS-----------------------------------
+
+* technical proficiency
+* risk vs safe
+* design vs implementation
+* Fibonacci estimation
+* Poker Planning
+
+Normalmente se combinan varias tecnicas
+
+Se mide a nivel de esfuerzo: ambiguedades, tiempo y complejidad.
+
+la comunicacion efectiva es clave: se espera que todo miembro del equipo pueda opinar y brindar observaciones de manera abierta y que estas sean discutidas y solucionadas
+
+******************************************
+PROS Y CONTRAS FINAL DE FILIMINA (parte 6)

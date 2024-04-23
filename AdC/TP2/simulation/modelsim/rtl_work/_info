@@ -1,0 +1,553 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/bruno/Escritorio/3ero FamaF/AdC/TP2/simulation/modelsim
+vadder
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1694182992
+!i10b 1
+!s100 a3zDN1NYD4EHE0kQDg6Iz2
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I3bi2fWgHb>IM3Q83RGLMg3
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+Z5 w1692806926
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/adder.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/adder.sv
+!i122 1
+L0 3 7
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1694182992.000000
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/adder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/adder.sv|
+!i113 1
+Z8 o-sv -work work
+Z9 !s92 -sv -work work {+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2}
+Z10 tCvgOpt 0
+valu
+R1
+Z11 !s110 1694182993
+!i10b 1
+!s100 kJ_fIV4Teb;5CA]b5`c2l1
+R3
+I98nG<QRL`b4A6hf:^_AH80
+R4
+S1
+R0
+w1694182621
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/alu.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/alu.sv
+!i122 17
+L0 1 18
+R6
+r1
+!s85 0
+31
+Z12 !s108 1694182993.000000
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/alu.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/alu.sv|
+!i113 1
+R8
+R9
+R10
+valudec
+R1
+R11
+!i10b 1
+!s100 :;H73aVU>X;gEYYfBOVnz2
+R3
+Ifk;1@F8hDz`[]fI310CR[0
+R4
+S1
+R0
+Z13 w1693487124
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/aludec.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/aludec.sv
+!i122 16
+L0 3 13
+R6
+r1
+!s85 0
+31
+R12
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/aludec.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/aludec.sv|
+!i113 1
+R8
+R9
+R10
+vcontroller
+R1
+R11
+!i10b 1
+!s100 aPJ8KWRl5DC0DV3[6oEG63
+R3
+IOGYO41nLG1M]Rf3I9O4I[0
+R4
+S1
+R0
+R13
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/controller.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/controller.sv
+!i122 15
+L0 3 23
+R6
+r1
+!s85 0
+31
+R12
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/controller.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/controller.sv|
+!i113 1
+R8
+R9
+R10
+vdatapath
+R1
+R11
+!i10b 1
+!s100 NGWT``[B?aQfDWRFmE@b20
+R3
+IX6c9fzQdWfa0ERbATSb_g1
+R4
+S1
+R0
+R13
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/datapath.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/datapath.sv
+!i122 14
+L0 3 71
+R6
+r1
+!s85 0
+31
+R12
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/datapath.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/datapath.sv|
+!i113 1
+R8
+R9
+R10
+vdecode
+R1
+R11
+!i10b 1
+!s100 ez[Sj6NLDB;VJc@X`e1Ui0
+R3
+I=aGQHbd^Yj;UOKoGl6@:O1
+R4
+S1
+R0
+R13
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/decode.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/decode.sv
+!i122 13
+L0 3 17
+R6
+r1
+!s85 0
+31
+R12
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/decode.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/decode.sv|
+!i113 1
+R8
+R9
+R10
+Edmem
+Z14 w1694174956
+Z15 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z16 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z17 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
+Z18 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z19 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 18
+R0
+Z20 8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/dmem.vhd
+Z21 F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/dmem.vhd
+l0
+L12 1
+Vbn3b0?2?3c<CA[;DdzR8^2
+!s100 9UhgcemjCI:F<bA>GRZY=0
+Z22 OV;C;2020.1;71
+33
+R11
+!i10b 1
+R12
+Z23 !s90 -reportprogress|300|-2008|-work|work|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/dmem.vhd|
+Z24 !s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/dmem.vhd|
+!i113 1
+Z25 o-2008 -work work
+Z26 tExplicit 1 CvgOpt 0
+Abehave
+R15
+R16
+R17
+R18
+R19
+DEx4 work 4 dmem 0 22 bn3b0?2?3c<CA[;DdzR8^2
+!i122 18
+l50
+L21 49
+V6hfU40U9zKmGmMdkMk@^90
+!s100 a2K;HL21gA:Y<M8M2VzYh0
+R22
+33
+R11
+!i10b 1
+R12
+R23
+R24
+!i113 1
+R25
+R26
+vexecute
+R1
+R11
+!i10b 1
+!s100 U[QMJjXa5lZUfkV]TGXBR2
+R3
+IIU`Qm6F<A@bPDH2ljinQ]1
+R4
+S1
+R0
+w1694182755
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/execute.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/execute.sv
+!i122 12
+L0 1 19
+R6
+r1
+!s85 0
+31
+R12
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/execute.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/execute.sv|
+!i113 1
+R8
+R9
+R10
+vfetch
+R1
+R11
+!i10b 1
+!s100 j[<IlKWHon8niW:>:;nkb1
+R3
+IFRZ<zWc:G^mm=YAMofgDe0
+R4
+S1
+R0
+w1694182857
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/fetch.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/fetch.sv
+!i122 11
+L0 1 15
+R6
+r1
+!s85 0
+31
+R12
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/fetch.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/fetch.sv|
+!i113 1
+R8
+R9
+R10
+vflopr
+R1
+R2
+!i10b 1
+!s100 G:ULc=<DL0:D23bSZHo<21
+R3
+IlB<]m777nHeeXY1RW8[g93
+R4
+S1
+R0
+w1693400833
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/flopr.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/flopr.sv
+!i122 10
+L0 1 8
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/flopr.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/flopr.sv|
+!i113 1
+R8
+R9
+R10
+vimem
+R1
+R2
+!i10b 1
+!s100 Q>KN_@R[[miW`IzhHX?kR0
+R3
+IF6]aSKWT7Sa1hmigH0J4:3
+R4
+S1
+R0
+w1694174655
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/imem.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/imem.sv
+!i122 9
+L0 1 62
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/imem.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/imem.sv|
+!i113 1
+R8
+R9
+R10
+vmaindec
+R1
+R2
+!i10b 1
+!s100 XCK`45onQ3M6MKLB<cC5N3
+R3
+Ihfdj3Png^WkCB23@4^lGD0
+R4
+S1
+R0
+w1694128459
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/maindec.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/maindec.sv
+!i122 8
+L0 1 73
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/maindec.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/maindec.sv|
+!i113 1
+R8
+R9
+R10
+vmemory
+R1
+R2
+!i10b 1
+!s100 LP[7i;OQNRmgDe[<ZEPcc0
+R3
+IJEKcNoiLFKgGdCg1S;j651
+R4
+S1
+R0
+R13
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/memory.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/memory.sv
+!i122 7
+L0 3 6
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/memory.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/memory.sv|
+!i113 1
+R8
+R9
+R10
+vmux2
+R1
+R2
+!i10b 1
+!s100 XfdfLdSb9dmK[VUYkeA:Q1
+R3
+IWJK^c9CNUjdQS?dF88U4V2
+R4
+S1
+R0
+R5
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/mux2.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/mux2.sv
+!i122 2
+Z27 L0 3 8
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/mux2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/mux2.sv|
+!i113 1
+R8
+R9
+R10
+vprocessor_arm
+R1
+R2
+!i10b 1
+!s100 ZeNRfI>jjlb:;YUZbb8A73
+R3
+IISDOLWB9;@HUOagQOA0IS3
+R4
+S1
+R0
+w1694128484
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/processor_arm.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/processor_arm.sv
+!i122 6
+L0 3 55
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/processor_arm.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/processor_arm.sv|
+!i113 1
+R8
+R9
+R10
+vprocessor_tb
+R1
+R11
+!i10b 1
+!s100 g1@fD2cR`Z<[BSCS0j2m<2
+R3
+IO^h>6RXBe<HWX?=NAFKEA0
+R4
+S1
+R0
+w1694179072
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/processor_tb.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/processor_tb.sv
+!i122 19
+L0 4 26
+R6
+r1
+!s85 0
+31
+R12
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/processor_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/processor_tb.sv|
+!i113 1
+R8
+R9
+R10
+vregfile
+R1
+R2
+!i10b 1
+!s100 n0E79k:mZYTNXbmLaEP2]0
+R3
+I`aTRK3?nODjmDYz[iggz50
+R4
+S1
+R0
+w1694182943
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/regfile.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/regfile.sv
+!i122 5
+L0 1 24
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/regfile.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/regfile.sv|
+!i113 1
+R8
+R9
+R10
+vsignext
+R1
+R2
+!i10b 1
+!s100 9FM3MUz2S@A?_?>dnoP`K3
+R3
+IJVQ97Ce?e;C6]UB>OVkKI3
+R4
+S1
+R0
+w1694177591
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/signext.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/signext.sv
+!i122 4
+L0 1 11
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/signext.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/signext.sv|
+!i113 1
+R8
+R9
+R10
+vsl2
+R1
+R2
+!i10b 1
+!s100 `c@h0_TfTnn`3CajieZiC2
+R3
+InQl<O?o3J4[4Ofm@ijdH42
+R4
+S1
+R0
+R5
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/sl2.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/sl2.sv
+!i122 0
+L0 3 9
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/sl2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/sl2.sv|
+!i113 1
+R8
+R9
+R10
+vwriteback
+R1
+R2
+!i10b 1
+!s100 lem0cZaoaK<4K2n`WO?nY2
+R3
+II6YMjcIo0NEjkF71z<EXQ2
+R4
+S1
+R0
+R13
+8/home/bruno/Escritorio/3ero FamaF/AdC/TP2/writeback.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/TP2/writeback.sv
+!i122 3
+R27
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/TP2/writeback.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/TP2|/home/bruno/Escritorio/3ero FamaF/AdC/TP2/writeback.sv|
+!i113 1
+R8
+R9
+R10

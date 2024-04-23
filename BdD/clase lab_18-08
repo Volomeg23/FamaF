@@ -1,0 +1,233 @@
+base de datos: 
+Es una coleccion de datos organizados relevantes a un dominio que son admins y consultados mediante un sistema de administracion de base de datos (dbms)
+
+database management system (dbms):
+Es un sistema que perimte la gestion y consulta de base de datos
+
+modelo de datos: 
+es una coleccion de herramientas conceptuales para describir los datos, las relaciones entre ellos, su semantica y las restricciones de consistencia
+
+modelo relacional -> SQL
+modelo No relacionales -> NoSQL
+   - modelo de objetos -> Realm DB
+   - modelo de documentos -> MongoDB
+   - modelo de grafos -> Neo4J
+   - modelo de llave-valor -> Redis
+   - modelos columnares -> SciDB
+
+Base de datos relacionales (RDBMS) : -estructura basica de tabla (relacion)
+                                     -la tabla define columnas (atributos) y tiene fila de datos (tuplas)
+                                     -se pueden relacionar una o mas tablas
+                                     - usan SQL como lenguaje para manipular y consultar datos
+
+
+                                                    *********MYSQL***********
+
+lenguaje: - DDL (data definition language) permite especificar y administrar la base de datos ( esquema, tipo de datos, restricciones,      
+indices, seguridad, configuracion)
+
+          - DML (data manipulation language) permite consultar y manipular el contenido de la base de datos ( insertar filas en una tabla, actualizar, borrar, consultar)
+
+transacciones: secuencia de varias consultas y modificaciones, se debe ejecutar completamente, si algun comando tuvo error, no se ejecuta nada.
+
+ejemplo DDL: 
+
+CREATE TABLE table_name (
+    col1 type1,
+    col2 type2,
+       ...
+    colk typek,
+    integrity-constraint1,
+    ....
+    integrity-constraintk);
+
+table_name -> nombre
+col ->  nombre de columna
+type -> tipo de dato en columna 
+integrity-constraint -> restriccion de integridad 
+
+
+                                    TYPE: 
+
+      -char(n) -> string de tamaño fijo n
+      - varchar(n) -> tamaño variable hasta n
+      - int
+      - numeric(p,d)-> nro de punto fijo con precision de p digitos y d decimales
+      - double precision
+      - json objetos JSON
+      - date -> fechas sin componente de tiempo
+      - datetime -> fechas con componente de tiempo
+
+
+                            RESTRICCIONES DE INTEGRIDAD:
+
+    sirven para asegurar consistencia de los datos en la base de datos
+
+PRIMARY KEY (col1, ... , colk)
+ -define a las columnas como claves primarias
+ - son unicas y no nulas
+ - no cambian nunca
+
+NOT NULL
+ - indica que una columna no puede tener valores nulos
+
+UNIQUE
+    - indica que una columna no puede tener valores repetidos
+
+FOREGIN KEY (col1, ... , colk) REFERNECES T [ON DELETE option] [ON UPDATE option]
+
+- indica que los valores de las columnas esas deben corresponderse a con los valores ded las claves primarias de la tabla T
+-los ON DELETE y ON UPDATE establecen como actuar
+- option: CASCADE | SET NULL | SET DEFAULT
+
+CHECK (condition)
+
+- indica que el predicado condition debe ser verdadero para toda la fila en la tabla
+
+                                ACTUALIZACION DE TABLAS:
+
+    DROP TABLE table_name; (eliminar una base de datos o tabla)
+    ALTER TABLE table_name; (hace mas que quitar y agregar columnas)
+    ADD COLUMN col1 type1;  
+    DROP COLUMN colk;   
+    INSERT INTO table_name ( col1, ... , colk) VALUES (val1, ...., valk);
+    DELETE FROM table_name WHERE condition;
+    UPDATE table_name SET col1 = val1, ... , WHERE condition; (Actualizar registro existente)
+
+                            COMANDOS EXTRA DE LIBRO:
+    
+    BACKUP (backup de una tabla)
+    \c (cancelar entrada osea comando)
+    CREATE ( crea una base de datos)
+    DESCRIBE (describir columnas de una tabla)
+    EXIT ( salir, de mysql)
+    GRANT (cambiar privilegios de usuario)
+    LOCK (bloquear una tabla o mas)
+    RENAME (cambia el nombre de una tabla)
+    SHOW (listar los detalles de un objeto)
+    SOURCE (ejecutar un archivo)
+    STATUS ( visualizar el estado en curso)
+    TRUNCATE (Vaciar UNA tabla)
+    UNLOCK (desbloquea una tabla)
+    USE (usar una base de datos)
+
+                                    CONSULTAS:
+
+    SELECT select_expr FROM table_expr [WHERE where_condition] [ORDER BY order_expr]
+
+   -select_expr: es un listado de una o mas columnas
+   -table_expr : es un listado de una o mas tablas
+   -where_condition: es un predicado
+   -order_expr: lista de expresiones tipo {col | alias |pos} [ASC|DESC] 
+
+El resultado de una consulta es una TABLA.
+
+                                SELECT:
+
+Por defecto SQL permite duplicados en los resultados de una query.
+Para eliminar duplicados, usar DISTINCT
+
+	SELECT DISTINCT name FROM instructor;
+
+Si queremos seleccionar todas las columnas, usamos el *.
+
+	SELECT * FROM instructor;
+
+Se puede usar un literal como columna.
+
+    SELECT ‘UNC’, name FROM instructor;
+
+Las columnas se pueden renombrar.
+
+    SELECT name AS fullname FROM instructor;
+
+Se pueden crear columnas con expresiones aritméticas (+,-,*,/).
+
+    SELECT name AS fullname, 
+        salary/40 AS usd_salary 
+    FROM instructor;
+
+SQL es case-insensitive.
+
+  
+                                FROM:
+
+FROM permite especificar las tablas involucradas en la query.
+FROM T1, T2, … , Tn realiza el producto cartesiano T1 x T2 x … x Tn.
+
+	SELECT  ∗ FROM instructor, teaches
+
+Cuidado cuando la cardinalidad de Ti no es trivial.
+
+Se pueden renombrar las tablas. 
+
+	SELECT  t.ID, i.ID 
+    FROM instructor AS i, teaches AS t
+
+                                WHERE:
+
+WHERE permite especificar  condiciones que el resultado debe satisfacer.
+
+    SELECT  ∗ FROM instructor WHERE dep_name = ‘Finance’;
+
+Se pueden combinar predicados usando AND, OR, NOT. 
+
+    SELECT ∗ FROM instructor WHERE dep_name = ‘Finance’ AND salary <= 90000;
+
+SQL provee el operador LIKE para matching sobre strings.
+
+-"%"  matchea cualquier substring.
+-"_" matchea cualquier caracter.
+
+    SELECT ∗ FROM instructor WHERE dep_name LIKE ‘%inan%’;
+
+Tambien provee el operador BETWEEN.
+
+    SELECT ∗ FROM instructor WHERE dep_name = ‘Finance’ AND salary BETWEEN 9000 AND 10000;
+
+                                    ORDER BY:
+
+ORDER BY permite ordenar los resultados.
+
+    SELECT ∗ FROM instructor WHERE dep_name = ‘Finance’ ORDER BY salary DESC;
+
+Se puede ordenar por más de una columna.
+
+    SELECT ∗ FROM instructor WHERE dep_name = ‘Finance’ ORDER BY salary DESC, name ASC;
+
+Por defecto el orden es ascendente.
+
+    SELECT ∗ FROM instructor WHERE dep_name = ‘Finance’ ORDER BY salary, name;
+
+Se puede usar el nro de columna para ordenar.
+
+    SELECT salary, name FROM instructor WHERE dep_name = ‘Finance’ ORDER BY 1 DESC, 2;
+
+                                     NULL:
+En una operación aritmética: 
+
+NULL (+ | - | * | /) X = NULL 
+
+En operaciones booleanas:
+	NULL AND TRUE = NULL
+	NULL AND FALSE = FALSE
+	NULL AND NULL = NULL
+	NULL OR TRUE = TRUE
+	NULL OR FALSE = NULL
+	NULL OR NULL = NULL
+	NOT NULL = NULL
+
+Si el predicado de un WHERE evalúa a FALSE o NULL para una tupla, la misma no forma parte del resultado.
+Para testear si un valor es NULL:
+
+WHERE salary IS null;
+WHERE salary IS NOT null;
+
+Todas las funciones de agregación, excepto COUNT, ignoran los valores nulos.
+
+
+--------------TAREA PROX CLASE Joins. Subqueries Anidadas. Operaciones de conjunto. Cómo lidiar con los NULLS.--------------------------------
+
+
+
+

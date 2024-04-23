@@ -1,0 +1,165 @@
+
+ejericio 1)
+
+
+db.users.insertMany([{name : "El Papu Gomez", email : "codeina@gmail.com", password : "Era de mi hijo nada mas"}, {name : "jaunt pep", email : "TheJaunt@gmail.com", password : "BLYAT"}, {name : "shunga shanga", email : "ShungaShanga@gmail.com", password : "holaMundo"},{name : "Linus Torvalds", email : "linusTorvalds@gmail.com", password : "ILoveLinuxMint"}, {name : "nahuel timba", email : "supertimba@gmail.com", password : "100pesos"}])
+
+
+db.comments.insertMany([
+{
+	name : "El Papu Gomez",
+	email : "codeina@gmail.com",
+	movie_id : ObjectId("573a1390f29313caabcd418c"),
+	text : "ta buena",
+	date : Date()
+},
+{
+	name : "jaunt pep",
+	email : "TheJaunt@gmail.com",
+	movie_id : ObjectId("573a1390f29313caabcd418c"),
+	text : "ta buena x2",
+	date : Date()
+},
+{
+	name : "shunga shanga",
+	email : "ShungaShanga@gmail.com",
+	movie_id : ObjectId("573a1390f29313caabcd418c"),
+	text : "ta buena x3",
+	date : Date()
+},
+{
+	name : "Linus Torvalds",
+	email : "linusTorvalds@gmail.com",
+	movie_id : ObjectId("573a1390f29313caabcd418c"),
+	text : "ta buena x4",
+	date : Date()
+},
+{
+	name : "nahuel timba",
+	email : "supertimba@gmail.com",
+	movie_id : ObjectId("573a1390f29313caabcd418c"),
+	text : "para a mi esta mala",
+	date : Date()
+}])
+
+2)
+
+db.movies.find({
+    "year":{$gt:1990}, 
+    "imdb.rating": { $ne: null, $gt: 0 }
+    },
+{"_id":0, "title":1, "year":1, "cast":1, "imdb.rating":1}).sort({"imdb.rating": -1}).limit(10)
+
+3)
+db.comments.find({
+    "movie_id":{$eq:ObjectId("573a1399f29313caabcee886")},
+    "date":{
+        $gte: ISODate("2015-01-01T00:00:00Z"),$lte: ISODate("2017-12-31T23:59:59Z")}
+    }, 
+    {"name":1, "email":1, "text":1, "date":1}).sort({"date":-1}).count()
+
+4)
+
+db.comments.find({"email":"patricia_good@fakegmail.com"},{"_id":0, "name":1, "movie_id":1, "text":1, "date":1}).sort({"date": -1}).limit(3)
+
+5)
+
+db.movies.find({
+    "genres": {$in: ["Drama", "Action"]},
+    "languages": {$size: 1},
+    $or : [{"imdb.rating": {$gt: 9.0}},{"runtime": {$gte: 180}}]
+},
+    {"_id":0, "title":1, "languages":1, "genre":1, "released":1, "imdb.votes":1}).sort({"released": -1, "imdb.votes": -1})
+
+6)
+
+db.theaters.find({
+    "location.address.state" : {$in : ["CA", "NY", "TX"]},
+    "location.address.city" : { $regex: /^F/i }
+    },
+{"_id": 0, "theaterId": 1, "location.address.state": 1, "location.address.city": 1, "location.geo.coordinates": 1}).sort({"location.address.state" : -1, "location.address.city" : -1})
+
+
+
+7)
+
+db.comments.updateOne({
+    "_id" : ObjectId("5b72236520a3277c015b3b73")
+},{
+    $set:{"text": "mi mejor comentario"},
+    $currentDate: { "date": { $type: "date" }}
+ })
+
+8) db.user.updateOne({
+    "email" : "joel.macdonel@fakegmail.com"},
+   { 
+    $set: {"password" : "some password"}
+   },
+    { upsert: true}
+)
+
+#la primera lo crea, la segunda lo actualiza
+    
+
+9)db.comments.deleteMany({"email":"victor_patel@fakegmail.com", "date" : {
+        $gte: ISODate("1980-01-01T00:00:00Z"),$lte: ISODate("1980-12-31T23:59:59Z")}
+})
+
+
+1)
+use restaurantsdb;
+
+
+db.restaurants.find(
+ {
+    $and: [{
+        "grades.date" : {
+            $gte: ISODate("2014-01-01T00:00:00Z"),
+            $lte: ISODate("2015-12-31T23:59:59Z")
+        },
+        "grades.score" : { $gt : 70, $lte : 90} 
+    }]
+ },
+ { "_id" : 0, "restaurant_id" : 1, "grades" : 1}
+)
+
+
+db.restaurants.find(
+{
+        "grades": {
+            $elemMatch: {
+                "date" : { $gte: ISODate("2014-01-01T00:00:00Z"), $lte: ISODate("2015-12-31T23:59:59Z")},
+                "score" : { $gte : 70, $lte : 90}
+        }
+    }
+},
+{ "_id" : 0, "restaurant_id" : 1, "grades" : 1})
+
+
+#NO ANDA WTFFF
+
+2)
+
+db.restaurants.updateOne(
+   { "restaurant_id": "50018608" },
+   {
+      $set: {
+         "grades": [
+            {
+               "date": ISODate("2019-10-10T00:00:00Z"),
+               "grade": "A",
+               "score": 18
+            },
+            {
+               "date": ISODate("2020-02-25T00:00:00Z"),
+               "grade": "A",
+               "score": 21
+            }
+         ]
+      }
+   },
+   { upsert: true }
+)
+
+
+

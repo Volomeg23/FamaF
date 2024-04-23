@@ -1,0 +1,94 @@
+Operadores:
+
+- para cargar un archivo. ghci --> :l *filename* --> OK, modules loaded
+
+- max *arg1* *arg2* (solo numeros)
+- min *arg1* *arg2* (solo numeros)
+- succ *arg1* (succesor numerico y alfabetico)
+- ++ (concatenar)
+- : (pegar al principio)
+- *arg1* !! *index* (extraer por indice)
+- head (saca primer elemento)
+- tails (devuelve las sobras sin head)
+- last (devuelve el ultimo elemento)
+- init ( devuelve todo menos el ultimo elemento)
+- length
+- null (true, si es lista vacia)
+-reverse (da vuelta la lista)
+-take *arg1* *arg2* (saca *arg1* elementos de la lista y los devuelve, empieza en 1 el indice,take 0 [1,2,3] = [])
+-drop *arg1* *arg2* (saca *arg1* de la lista y devuelve el resto)
+- maximum, minimum (da el menor elemento de una lista), SOLO PARA LISTAS
+- sum (sumatoria de una lista) y prod
+- *arg1* `elem` *arg2* (devuelve true si el elemento *arg1* se encuentra en la lista *arg2*) (para el ` -> ALTgr y dos veces el de "}")
+
+
+- rangos -> [1..100] declara un arreglo con todos los numeros del 1 AL 99, puedo combinar [2,3..25], pero las "," solo al principio,
+no se puede alternar el "," y "..", osea solo se puede especificar UN SOLO PASO. Se pueden declarar succeciones [1,2..20]-> da todos los numeros pares, [3,6..20] da todos los mutliplos de 3, si hacemos [20..1] da vacio, por que no reconoce el patron, pero si damos
+[20,19..1] devuelve los numeros del 20 al 1
+
+- cycle y take: si queremos declarar un arreglo con ciclos, pero no infinito-> take 10 (cycle [1,2,3]), esto da una lista con 10 elementos y los numeros 1,2,3 en ciclo, sirve para listas tanto como para Strings
+-para hacerlo con numeros usamos repeat-> take 10 (repeat 5), crea un arreglo con 10 elementos donde todos son el 5
+
+
+- if ... then ... else
+- declaracion: let x = [1,2,3,4]
+
+Logical:
+- && (and)
+- || (or)
+- not
+- == (equal)
+- /= (not equal)
+- >, <, >=, <= (sirve para listas, compara indice por indice. ej:  [3,2,1] > [3,2,3]: 3>3: eq, 2>2 eq, 1>3 F, res= False )
+
+Comprension de listas: sirve para dar una funcion mas compleja a la listas
+
+ej:
+[x*2 | x <- [1..10]]  --> numeros de l 1 al 10 mutliplicados por 2
+
+[x*2 | x <- [1..10] | x >= 12] --> lo mismo que arriba pero mayores a 12, añadimos ese predicado x>=12, la | separa expresiones
+
+[ x | x <- [50..100], x `mod` 7 == 3] --> numeros del 50 al 100 tal que el resto de la division del numero por 7, de 3
+
+boomBangs xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x] 
+Esta funcion lo que hace es imprimir BOOM! para cada elemento menor a 10 en una lista y ademas si este es impar
+
+-podemos añadir todos los predicados que querramos simplemente separandolos por ","
+
+otros ej:
+    [ x*y | x <- [2,5,10], y <- [8,10,11], x*y > 50]
+
+    let nouns = ["hobo","frog","pope"]
+    let adjectives = ["lazy","grouchy","scheming"]
+    [adjective ++ " " ++ noun | adjective <- adjectives, noun <- nouns]
+
+    removeNonUppercase st = [ c | c <- st, c `elem` ['A'..'Z']] //remueve las minusculas y devuelve todas las mayus en orden del texto
+
+    let rightTriangles' = [ (a,b,c) | c <- [1..10], b <- [1..c], a <- [1..b], a^2 + b^2 == c^2, a+b+c == 24]
+    devuelve una tripla con un valor de c en ese rango tal que se cumpla el predicado
+
+
+Tuplas:
+- let x = (8,11) declarando tupla
+
+(estas dos solo funciona para pares):
+-fst *tuple* (devuelve el primer elemento de la tupla)
+-snd *tuple* (Devuelve el segundo elemento de la tupla)
+
+-zip *lista* *lista* ( devuelve una lista de pares dados por el mismo indice de la lista), si una lista es menor a la otra, lo hace
+hasta donde llegue la menor lista
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+Notas Presentacion Lab
+
+-data :Nombre del tipo: = :constructores de tipo: | .. | /definen un tipo de dato nuevo
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+--Unico input: Forma
+-- Output : dibujo relacionado a la forma
+
+--dibujo.hs define tipo dibujo de a, Figura a es un atomo de la gramatica 

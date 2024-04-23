@@ -1,0 +1,84 @@
+
+main.elf:     formato del fichero elf64-littleaarch64
+
+
+Desensamblado de la sección .text:
+
+0000000000000000 <l1-0x4>:
+   0:	d2801c1e 	mov	x30, #0xe0                  	// #224
+
+0000000000000004 <l1>:
+   4:	b800801e 	stur	w30, [x0, #8]
+   8:	8b1f03e0 	add	x0, xzr, xzr
+   c:	910007de 	add	x30, x30, #0x1
+  10:	17fffffd 	b	4 <l1>
+
+Desensamblado de la sección .debug_line:
+
+0000000000000000 <.debug_line>:
+   0:	00000038 	.inst	0x00000038 ; undefined
+   4:	001d0003 	.inst	0x001d0003 ; undefined
+   8:	01040000 	.inst	0x01040000 ; undefined
+   c:	000d0efb 	.inst	0x000d0efb ; undefined
+  10:	01010101 	.inst	0x01010101 ; undefined
+  14:	01000000 	.inst	0x01000000 ; undefined
+  18:	00010000 	.inst	0x00010000 ; undefined
+  1c:	6e69616d 	rsubhn2	v13.8h, v11.4s, v9.4s
+  20:	0000732e 	.inst	0x0000732e ; undefined
+  24:	00000000 	.inst	0x00000000 ; undefined
+  28:	00000209 	.inst	0x00000209 ; undefined
+  2c:	00000000 	.inst	0x00000000 ; undefined
+  30:	23150000 	.inst	0x23150000 ; undefined
+  34:	02212121 	.inst	0x02212121 ; undefined
+  38:	01010001 	.inst	0x01010001 ; undefined
+
+Desensamblado de la sección .debug_info:
+
+0000000000000000 <.debug_info>:
+   0:	0000002a 	.inst	0x0000002a ; undefined
+   4:	00000002 	.inst	0x00000002 ; undefined
+   8:	01080000 	.inst	0x01080000 ; undefined
+	...
+  18:	00000014 	.inst	0x00000014 ; undefined
+	...
+  24:	00000007 	.inst	0x00000007 ; undefined
+  28:	00000029 	.inst	0x00000029 ; undefined
+  2c:	La dirección 0x000000000000002c está fuera de los límites.
+
+
+Desensamblado de la sección .debug_abbrev:
+
+0000000000000000 <.debug_abbrev>:
+   0:	10001101 	adr	x1, 220 <l1+0x21c>
+   4:	12011106 	and	w6, w8, #0x8000000f
+   8:	1b0e0301 	madd	w1, w24, w14, w0
+   c:	130e250e 	sbfiz	w14, w8, #18, #10
+  10:	00000005 	.inst	0x00000005 ; undefined
+
+Desensamblado de la sección .debug_aranges:
+
+0000000000000000 <.debug_aranges>:
+   0:	0000002c 	.inst	0x0000002c ; undefined
+   4:	00000002 	.inst	0x00000002 ; undefined
+   8:	00080000 	.inst	0x00080000 ; undefined
+	...
+  18:	00000014 	.inst	0x00000014 ; undefined
+	...
+
+Desensamblado de la sección .debug_str:
+
+0000000000000000 <.debug_str>:
+   0:	6e69616d 	rsubhn2	v13.8h, v11.4s, v9.4s
+   4:	2f00732e 	.inst	0x2f00732e ; undefined
+   8:	656d6f68 	fnmls	z8.h, p3/m, z27.h, z13.h
+   c:	6c6f762f 	ldnp	d15, d29, [x17, #-272]
+  10:	67656d6f 	.inst	0x67656d6f ; undefined
+  14:	6373452f 	.inst	0x6373452f ; undefined
+  18:	6f746972 	umlsl2	v18.4s, v11.8h, v4.h[7]
+  1c:	2f6f6972 	umlsl	v18.4s, v11.4h, v15.h[6]
+  20:	756d6571 	.inst	0x756d6571 ; undefined
+  24:	6d69735f 	ldp	d31, d28, [x26, #-368]
+  28:	554e4700 	.inst	0x554e4700 ; undefined
+  2c:	20534120 	.inst	0x20534120 ; undefined
+  30:	34332e32 	cbz	w18, 665f4 <l1+0x665f0>
+	...

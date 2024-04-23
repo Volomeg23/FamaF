@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at maindec.sv(10): always construct contains both blocking and non-blocking assignments File: /home/bruno/Escritorio/3ero FamaF/AdC/ModulosTP3/maindec.sv Line: 10

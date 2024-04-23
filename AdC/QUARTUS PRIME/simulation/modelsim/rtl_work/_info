@@ -1,0 +1,63 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/bruno/Escritorio/3ero FamaF/AdC/QUARTUS PRIME/simulation/modelsim
+vmaindec
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1693949035
+!i10b 1
+!s100 92YGFi6^ifB:lb[`1LcId3
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I<`1;?bFRe[zl:DJl`IaQ]0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1693949019
+8/home/bruno/Escritorio/3ero FamaF/AdC/QUARTUS PRIME/maindec.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/QUARTUS PRIME/maindec.sv
+!i122 0
+L0 1 73
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1693949035.000000
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/QUARTUS PRIME/maindec.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/QUARTUS PRIME|/home/bruno/Escritorio/3ero FamaF/AdC/QUARTUS PRIME/maindec.sv|
+!i113 1
+Z7 o-sv -work work
+Z8 !s92 -sv -work work {+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/QUARTUS PRIME}
+Z9 tCvgOpt 0
+vmaindec_tb
+R1
+R2
+!i10b 1
+!s100 b[i=f7VcdEPi;Jj@3P2D32
+R3
+I[_CeDYKV;n7MP6RKP>chc2
+R4
+S1
+R0
+w1693948925
+8/home/bruno/Escritorio/3ero FamaF/AdC/QUARTUS PRIME/maindec_tb.sv
+F/home/bruno/Escritorio/3ero FamaF/AdC/QUARTUS PRIME/maindec_tb.sv
+!i122 1
+L0 1 50
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/bruno/Escritorio/3ero FamaF/AdC/QUARTUS PRIME/maindec_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bruno/Escritorio/3ero FamaF/AdC/QUARTUS PRIME|/home/bruno/Escritorio/3ero FamaF/AdC/QUARTUS PRIME/maindec_tb.sv|
+!i113 1
+R7
+R8
+R9

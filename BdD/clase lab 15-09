@@ -1,0 +1,46 @@
+funciones y procedimientos
+
+-CREATE PROCEDURE / CREATE FUNCTION: conjunto de sentencias con nombre que puede ser reutilizado
+
+-ejemplo:
+
+create function *nombre de funcion*(*argumento && tipo de dato {varchar(20), int}*)
+    return integer
+    begin
+    declare d_count integer; 
+        SELECT count(*) into d_count
+        FROM instructor
+        WHERE instructor.dept_name = dept_name
+    return d_count;
+    end
+
+create procedure dept_count_proc(IN *arg*, OUT *arg_resultado*, *se puede poner INOUT pero se asume que la variable fue inicializada*)
+    
+    begin
+        SELECT count(*) into d_count
+        FROM instructor
+        WHERE instructor.dept_name = dept_name  
+    end
+
+-para llamarlo:
+
+declare d_count integer;
+call dept_count_proc(*arg*, *arg_resutado{en este caso d_count}*)
+
+-Sentencias while, repeat, for loop y if-then-else
+
+
+-TRIGGERS: funcionalida de la baso de datos que se ejecuta de forma automatica cuando sucede una operacion de tipo INSERT, UPDATE o DELETE y se puede configurar para que ocurra antes(BEFORE) o despues(AFTER)
+
+-VIEWS: relaciones que contienen el resultado de consultas, utiles para ocultar informacion necesaria y para recopilar informacion de mas de una realacion en una sola vista. Se almacena solo la consulta que define la vista y persiste en memoria, no va a disco
+
+In SQL, a view is a virtual table based on the result-set of an SQL statement.
+By definition, a view is a named query stored in the database catalog.
+
+A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.
+
+You can add SQL statements and functions to a view and present the data as if the data were coming from one single table.
+
+Nota: ¡ Una vista siempre muestra datos actualizados! El motor de base de datos recrea la vista cada vez que un usuario la consulta.
+
+

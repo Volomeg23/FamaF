@@ -1,0 +1,21 @@
+                Repaso del libro:
+Usar DEFAULT puede ser util pero no usar DEFAULT en primary keys, usar auto_increment
+
+aclarar duda de FROM .. LEFT JOIN ... , el LEFT y RIGHT no es conmutativo pero INNER y FULL si, FROM ... va a tener prioridad en el join
+
+aclaracion CONSTRAINTS:
+
+Although foreign key names can be anything, it's actually a good practice to follow the convention of putting the table name first.
+
+The most important reason for this is that foreign key names must be unique within a database (contrarily to index names, which must only be unique within each table). So, by following this convention, foreign key names only have to be unique within each table.
+
+Personally, I use the convention [table_name]_fk_[field_name].
+
+In order to name your foreign keys, you will have to explicitly spell out the constraint on the table, instead of just the foreign key.
+
+
+otra forma de añadir foregin key:
+
+ALTER TABLE country ADD CONSTRAINT fk_country_continent FOREIGN KEY (Continent) REFERENCES continent(ContinentName);
+
+ahora la foreign key tiene nombre para facil debuggeo

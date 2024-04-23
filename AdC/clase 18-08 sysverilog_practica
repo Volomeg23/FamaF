@@ -1,0 +1,389 @@
+Modulos:
+
+conductual -> describe que hace el modulo
+estructural -> describe como se construye a partir de modulos simples
+
+CONDUCTUAL:
+
+//Boolean function y = a’b’c’+ ab’c’+ ab’c
+
+module example(input logic a, b, c,
+                output logic y);
+ assign y = ~a & ~b & ~c | a & ~b & ~c | a & ~b & c;
+endmodule Y 
+
+module/endmodule: hacer bloques para un modulo
+
+input logic : señales de input o output booleanos, flotantes o indefinidos
+
+assign: para logica combinacional (and, or, not, etc.)
+
+SINTAXIS:
+
+- sensible a maysculas, reset != Reset
+- nombres no empiezan con numeros
+- espacios en blanco se ignoran
+- comentar //, bloques /* ... */
+
+-----------------------------------------------------------------------
+
+OPERADORES: (ordenado por precedencia)
+
+~ (NOT), * (MUL), / (DIV), % (MOD), + (PLUS), - (MINUS)
+<< >> (SHIFT LEFT Y RIGHT LOGICO), <<< >>> (SHIFT L Y R ARITMETICO, mantiene signo), < <= > >= (COMPARACION), == != (IGUALDAD), & (AND), ʌ (XOR), | (OR), ?: (CONDICIONAL)
+
+assign y4 = ~(a & b); // NAND
+assign y5 = ~(a | b); // NOR
+
+(estas asignaciones en general, son concurrentes)
+
+
+=== (igualdad estricta) 
+
+BITWISE:
+- a[3:0] represents a 4-bit bus. The bits, from most significant to least significant, are a[3], a[2], a[1] and a[0]. The least significant bit has the smallest bit number.
+
+---------------------------------------------------------
+OPERADOR DE REDUCCION:
+asigna un valor de multiples inputs, actuando como bus simple.
+
+module and8(input logic [7:0] a,
+            output logic y);
+ assign y = &a;
+// &a is much easier to write than
+// assign y = a[7]&a[6]&a[5]&a[4]&
+// a[3]&a[2]&a[1]&a[0];
+
+esto lo que hace es hacer AND de todos los bits de a, aplica una operacion logica a todos los bus, ya que "y" es de un solo bit
+
+--------------------------------------------------------------
+
+ASIGNACION CONDICIONAL:
+
+module mux2(input logic [3:0] d0, d1,
+            input logic s,
+            output logic [3:0] y);
+ assign y = s ? d1 : d0;
+
+si s=1 (True) -> d1
+si s=0 (false) -> d0
+
+----------------------------------------------------------------
+
+FORMATOS DE NUMERO:
+
+- N = number of bits, B = base.
+
+- SystemVerilog supports 'b for binary, 'o for octal, 'd for decimal and 'h for hexadecimal.
+
+- N'B is optional but recommended (default is decimal).
+
+- '0 and '1: filling a bus with all 0s or all 1s, respectively
+
+ejemplos:
+3'b101 --> 101
+'b11 --> 0000......000011
+8'b11 --> 00000011
+8'1010_1011 --> 10101011 (el _ se ignora)
+3'd6 --> 110
+6'o42 --> 100010
+8'hAB --> 10101011
+42 --> 000000....0101010
+
+---------------------------------------------------
+MANIPULADOR DE BITS:
+
+assign y = {a[2:1], {3{b[0]}}, a[0], 6'b100_010};
+
+// if y is a 12-bit signal, the above statement produces:
+
+y = a[2] a[1] b[0] b[0] b[0] a[0] 1 0 0 0 1 0
+
+- The {} operator is used to concatenate busses.
+
+- {3{b[0]}} indicates three copies of b[0].
+
+--------------------------------------------------------------
+ESTRUCTURADO VS CONDUCTUAL:
+
+estructurado:
+
+module exampleS(input logic a, b, sel,
+                output logic f);
+logic c, d, not_sel;
+not gate0(not_sel, sel);
+and gate1(c, a, not_sel);
+and gate2(d, b, sel);
+or gate3(f, c, d);
+endmodule 
+
+- gate son compuertas predefinidas de QUARTUS, not gate0 es una compuerta not
+- la sintaxis de gate es, gateX(output, input(s)), ej: and gate(c, a, b) --> salida c, entradas a y b
+
+conductual:
+
+module exampleB (input logic a, b, sel,
+                 output logic f);
+logic c, d;
+assign c = a & (~sel);
+assign d = b & sel;
+assign f = c | d;
+endmodule
+
+SE PUEDEN MEZCLAR AMBOS TIPOS DE MODELOS.
+
+------------------------------------------------------
+ALWAYS: 
+
+In SystemVerilog always statements signals keep their old value until an
+event in the sensitivity list takes place that explicitly causes them to change.
+
+General Structure:
+
+always @(sensitivity list)
+ statement;
+
+Whenever the event in sensitivity list occurs, statement is executed
+
+- hay always especializados para mejor uso: always_comb, always_latch y always_ff
+
+- el always_comb no tiene lista de sensibilidad
+
+- los always siempre se ejecutan secuencialmente pero el tiempo "se detiene" por lo que podria decirse que es una instruccion atomica, lo que esta fuera es todo en paralelo
+
+- se usa beign/end para ejecutar las sentencias
+    
+ejemplo: 
+        always_comb
+       if (en) y = a;
+
+- como no hay un else, se mantiene el estado anterior hasta que en=true y cambia.
+
+
+si usamos un edge sensitive event control:
+
+
+always_ff @(posedge clock, negedge resetN) (sensible a flanco de clock)
+    if (!resetN) q <= 0;
+    else q <= d;
+
+
+
+posedge:flanco positivo
+negedge:flanco negativo
+
+
+---------------------------------------------------------------------------------------------
+
+MODULO TIENE QUE TENER MISMO NOMBRE QUE ARCHIVO, el nombre mux esta ya definido.
+
+-------------------------------------------------------------------------------------------
+
+case statement:
+
+module sevenseg(input logic [3:0] data,
+                output logic [6:0] segments);
+ always_comb
+     case (data)
+     0: segments = 7'b111_1110;
+     1: segments = 7'b011_0000;
+     2: segments = 7'b110_1101;
+     3: segments = 7'b111_1001;
+     4: segments = 7'b011_0011;
+     5: segments = 7'b101_1011;
+     6: segments = 7'b101_1111;
+     7: segments = 7'b111_0000;
+     8: segments = 7'b111_1111;
+     9: segments = 7'b111_0011;
+     default: segments = 7'b000_0000; // required, ya que case no tiene todos los valores posibles de data
+ endcase
+endmodule 
+
+
+//si data es = 0, entonces segments= 7'b111_1110 y asi para cada caso del valor de data tengo una salida diferente en segments
+
+-------------------------------------------
+casez statement:
+
+module priority_casez(input logic [3:0] a,
+                    output logic [3:0] y);
+  always_comb
+    casez(a)
+     4'b1???: y = 4'b1000; // ?=don’t care, solo le importa que el primer bit de a sea 1, no importa los otros bits
+     4'b01??: y = 4'b0100;
+     4'b001?: y = 4'b0010;
+     4'b0001: y = 4'b0001;
+     default: y = 4'b0000;
+     endcase
+endmodule
+
+------------------------------
+
+asignaciones bloqueantes y no bloqueantes:
+
+NO BLOQUENATE: concurrente (logica secuencial)
+
+// Good synchronizer using
+// nonblocking assignments
+
+module syncgood(input logic clk,
+                input logic d,
+                output logic q);
+ logic n1;
+ always_ff @(posedge clk)
+    begin
+        n1 <= d; // nonblocking
+        q <= n1; // nonblocking
+    end
+endmodule
+
+BLOQUEANTE: secuencial (logica combinacional)
+
+// Bad synchronizer using
+// blocking assignments
+
+module syncbad(input logic clk, 
+               input logic d,
+               output logic q);
+ logic n1;
+ always_ff @(posedge clk)
+    begin
+        n1 = d; // blocking
+        q = n1; // blocking
+    end
+endmodule
+
+
+-------------------------------------
+
+Parametrizar:
+
+2:1 mux:
+module mux2
+ #(parameter width = 8) // name and default value
+ (input logic [width-1:0] d0, d1,  ---> esto es lo mismo que input logic [7:0] d0, d1,
+ input logic s,
+ output logic [width-1:0] y);
+ assign y = s ? d1 : d0;
+endmodule
+
+
+Instance with 8-bit bus width (uses default, osea 8):
+ mux2 myMux(d0, d1, s, out);
+
+Instance with 12-bit bus width:
+ mux2 #(12) lowmux(d0, d1, s, out);  // con esto cambio el width a 12 sin necesidad de hacer modulo aparte.
+
+
+para varios parametros (parameter width = 8, en = 3, cosa = 7)
+
+y se llama como  mux2 #(12,3,22) lowmux(d0, d1, s, out); 
+----------------------------------------------------------------------------
+
+ARRAYS no empaquetados:
+
+Basic syntax of an unpacked array declaration is:
+<data_type> <bus_size> <array_name> <array_dimensions>
+
+For example:
+logic [7:0] table [3:0]; // array “table”
+                        // has 4 elements of 8 bit
+
+● With unpacked arrays, each element of the array may be stored independently
+from other elements. con esto tenemos un acceso mas rapido ya que no tenemos que leer todo el arreglo
+
+● Use unpacked arrays to model arrays where typically one element at a time is
+accessed, such as with RAMs and ROMs
+
+-la estructura de datos de los unpacked array son las palabras, por eso puedo acceder a elementos particulares
+ya que accedemos de a palabras
+
+inicializacion:
+
+● Unpacked arrays can be initialized at declaration, using a list of values
+enclosed between ‘{ and } braces for each array dimension.
+
+● The assignment requires nested sets of braces that exactly match the
+dimensions of the array.
+
+logic [31:0] ROM [0:5] = '{32'h8b020021,
+                           32'h8b000000,
+                           32'h8b000000,
+                           32'hf8008001,
+                           32'h91000461,
+                           32'h8b000000};   // carga instrucciones en la ROM
+
+//mas formas de inicializar un arreglo ->filmina
+
+
+
+packed array: guarda todos los elementos del arreglo de forma continua, para acceder a un solo bit, usa recursos extras para "filtrar"
+
+<data_type> <bus_size> <array_dimensions> <array_name> 
+
+
+---------------------------------------------------------------
+
+TEST BENCH:
+
+-cada modulo tiene su tesbench asociado
+
+-con esto puedo inyectar valores y testearlos de diferentes formas: simple(solo inyecta inputs), self-check(inyecta inputs y output esperados para ese input), self-checking with vectors(inyecto muchos casos de inputs y sus respectivos outputs)
+
+EJEMPLO:
+
+module sillyfunction(input logic a, b, c,
+ output logic y);
+ assign y = ~b & ~c | a & ~b;
+endmodule
+
+
+testbench SIMPLE:
+
+module testbench1();
+ logic a, b, c; // internal variables
+ logic y;
+ // instantiate device under test
+ sillyfunction dut(a, b, c, y);
+ // apply inputs one at a time
+ initial begin
+    a = 0; b = 0; c = 0; #10; --> #10, espera 10 unidades de tiempo, delay. puede ser #10 ns, #1000 (1000 picosegundos)
+    c = 1; #10;  // a y b tienen el mismo valor de la linea anterior ya que no se modificaron como c
+    b = 1; c = 0; #10;
+    c = 1; #10;
+    a = 1; b = 0; c = 0; #10;
+    c = 1; #10;
+    b = 1; c = 0; #10;
+    c = 1; #10;
+ end
+endmodule
+
+
+DELAYS: 'timescale 1ns / 10ps (Unidades de tiempo en 1ns y precision de 10ps)
+
+
+testbench SELF-CHECKING:
+
+module testbench2();
+ logic a, b, c;
+ logic y;
+ // instantiate dut
+ sillyfunction dut(a, b, c, y);
+ /* apply inputs and check results
+    one at a time */
+ initial begin
+    a = 0; b = 0; c = 0; #10; //--> se espera un poco antes de evaluar "y" para darle tiempo a que procese el modulo
+    if (y !== 1) $display("000 failed.");
+    c = 1; #10;
+    if (y !== 0) $display("001 failed.");
+    b = 1; c = 0; #10;
+    if (y !== 0) $display("010 failed.");
+    c = 1; #10;
+    ...
+
+
+testbench SELF-CHECKING WITH VECTORS(TwT) --> ultimas filminas y moodle con modelo para usar
+
+
+
+

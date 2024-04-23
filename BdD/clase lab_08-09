@@ -1,0 +1,14 @@
+Consultas anidadas:
+
+SELECT DISTINCT --> elimina duplicados
+
+[IN | NOT IN] operacion de conjuntos
+
+When using NOT IN , the subquery returns a list of zero or more values in the outer query where the comparison column does not match any of the values returned
+
+EXISTS | NOT EXISTS devuelve un valor booleano
+
+El HAVING se usa cuando la subquery no fue computada todavia
+
+ademas Filtra en agrupaciones, al contrario de WHERE que FILTRA fila por fila
+Podemos usar WHERE cuando ya usamos una CTE, tengo una tabla encima

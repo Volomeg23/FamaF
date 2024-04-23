@@ -1,0 +1,30 @@
+file 754 1683408520                                             
+version 3
+run General-0-20230506-18:27:52-1513
+attr configname General
+attr datetime 20230506-18:27:52
+attr datetimef 20230506-182752
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Network
+attr processid 1513
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network Network
+config sim-time-limit 200s
+config Network.nodeTx.gen.generationInterval exponential(0.1)
+config Network.nodeTx.gen.packetbysize 12500
+config Network.queue.bufferSize 200
+config Network.nodeRx.queue.bufferSize 200
+config Network.nodeTx.queue.buffeSize 2000000
+
+vector 0 Network.nodeRx.sink Delay ETV
+0	727 26 8 8 0.079787450457 0.079787450457 1 0.0002 0.0002 0.0002 4e-08
+

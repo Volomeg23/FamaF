@@ -1,0 +1,13 @@
+VALGRIND
+
+-valgrind --leak-check=full --show-leak-kinds=all  ./*exec* *file to read*
+
+gdb 
+
+-poner flag -g en makefile
+
+-gdb --args ./*exec* *file to read*
+
+-run
+
+
